@@ -1,2 +1,2 @@
 # LibraryManagementSystemJavaFx
-simple library management system written by java and javafx
+Library management system written by java and javafx
