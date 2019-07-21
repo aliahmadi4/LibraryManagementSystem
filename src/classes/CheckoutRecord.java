@@ -26,6 +26,10 @@ public class CheckoutRecord implements Serializable{
 		this.dueDate = checkoutDate.plusDays(bookCopy.getBook().getCheckoutLength());
 	}
 
+	
+	public int getId() {
+		return id;
+	}
 	public Member getMember() {
 		return member;
 	}

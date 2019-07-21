@@ -2,13 +2,14 @@ package dataaccess;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import classes.Address;
 import classes.*;
 
-
 public class Main {
+
 
 	public static void main(String[] args) {
 
@@ -16,15 +17,15 @@ public class Main {
 		
 		//Members
 		Member mmbr1 = new Member("Ali", "Ahmadi", add, "641-451-3308", 1);
-		Member mmbr2 = new Member("John", "Doe", add, "641-451-3309", 1);
-		Member mmbr3 = new Member("Bob", "Artist", add, "641-451-3307", 1);
-		Member mmbr4 = new Member("Mike", "Jackson", add, "641-451-3306", 1);
+		Member mmbr2 = new Member("John", "Doe", add, "641-451-3309", 2);
+		Member mmbr3 = new Member("Bob", "Artist", add, "641-451-3307", 3);
+		Member mmbr4 = new Member("Mike", "Jackson", add, "641-451-3306", 4);
 		//System.out.println(mmbr1);
 		
 		//Authors
 		Author author1 = new Author("Authur", "Trump", add, "641-451-3305", "Phd", "Nobel Prize Holder");
 		List<Author> authors = new ArrayList<>();
-		//authors.add(author1);
+		authors.add(author1);
 		
 		//Books
 		Book book1 = new Book("Algorithm", "ISBN-111111", authors, 3, 21);
@@ -47,11 +48,38 @@ public class Main {
 		CheckoutRecord checkout8 = new CheckoutRecord(8, mmbr4, Periodical3.checkout(), LocalDate.of(2019, 01, 01));
 		//System.out.println(checkout1);
 		
+		//DataAccess
 		DataAccess da = new DataAccessFacade();
-		da.saveLibraryMember("emp", mmbr1);
+		da.saveMember(mmbr1);
+		da.saveMember(mmbr2);
+		da.saveMember(mmbr3);
+		da.saveMember(mmbr4);
 		
-		Member m = da.readLibraryMember("emp");
-		System.out.println(m);
+		da.saveBook(book1);
+		da.saveBook(book2);
+		da.saveBook(book3);
+		da.saveBook(book4);
+		da.saveBook(Periodical1);
+		da.saveBook(Periodical2);
+		da.saveBook(Periodical3);
+		
+		da.saveCheckoutRecord(checkout1);
+		da.saveCheckoutRecord(checkout2);
+		da.saveCheckoutRecord(checkout3);
+		da.saveCheckoutRecord(checkout4);
+		da.saveCheckoutRecord(checkout5);
+		da.saveCheckoutRecord(checkout6);
+		da.saveCheckoutRecord(checkout7);
+		da.saveCheckoutRecord(checkout8);
+		
+		HashMap<Integer, Member> members = da.readMembers();
+		System.out.println(members);
+		
+		HashMap<String, Member> books = da.readBooks();
+		System.out.println(books);
+		
+		HashMap<Integer, Member> records = da.readRecords();
+		System.out.println(records);
 	}
 
 }

@@ -1,6 +1,7 @@
 package classes;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Member extends Person implements Serializable{
 
@@ -15,6 +16,11 @@ public class Member extends Person implements Serializable{
 	public int getMemberId() {
 		return memberId;
 	}
+	
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash();
+//	}
 	
 	public String toString() {
 		return this.getFirstName() + " " + this.getLastName() + " " + this.getAddress().getStreet();

@@ -1,8 +1,21 @@
 package dataaccess;
 
-import classes.Member;
+import java.util.HashMap;
+import java.util.List;
+
+import classes.*;
 
 public interface DataAccess {
-	public void saveLibraryMember(String name, Member member);
-	public Member readLibraryMember(String name);
+	//Members
+	public void saveMember(Member member);
+	public HashMap<Integer, Member> readMembers();
+	
+	//Book
+	public void saveBook(Book book);
+	public HashMap<String, Member> readBooks();
+	
+	//CheckoutRecord
+	public void saveCheckoutRecord(CheckoutRecord checkout);
+	public HashMap<Integer, Member> readRecords();
+	
 }
