@@ -26,5 +26,8 @@ public class BookCopy implements Serializable{
 		return available;
 	}
 	
+	public void changeAvailability() {
+		available = !available;
+	}
 	
 }

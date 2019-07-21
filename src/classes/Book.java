@@ -8,15 +8,14 @@ public class Book implements Serializable{
 
 	private String title;
 	private String isbn;
-	private List<String> authors;
-	private boolean availability;
+	private List<Author> authors;
 	private List<BookCopy> copies = new ArrayList<>();
 	private int checkoutLength;
-	public Book(String title, String isbn, List<String> authors, boolean availability, int numberOfCopy,int checkoutLength) {
+	
+	public Book(String title, String isbn, List<Author> authors, int numberOfCopy,int checkoutLength) {
 		this.title = title;
 		this.isbn = isbn;
 		this.authors = authors;
-		this.availability = availability;
 		this.makeCopy(numberOfCopy);
 		this.checkoutLength = checkoutLength;
 	}
@@ -34,17 +33,46 @@ public class Book implements Serializable{
 	public String getIsbn() {
 		return isbn;
 	}
-	public List<String> getAuthors() {
+	public List<Author> getAuthors() {
 		return authors;
 	}
-	public boolean isAvailability() {
-		return availability;
+	public boolean isAvailable() {
+		return copies.stream().map(x->x.isAvailable()).reduce(false, (x,y)->x||y);
 	}
 	
 	public int getCheckoutLength() {
 		return checkoutLength;
 	}
+
+	public BookCopy checkout() {
+		if(isAvailable()) {
+			BookCopy bookcopy= null;
+			for(BookCopy bc: copies) {
+				if(bc.isAvailable()) {
+					bc.changeAvailability();
+					bookcopy = bc;
+					break;
+				}
+				
+			}
+			return bookcopy;
+		}
+		return null;
+	}
+
 	
+	@Override
+	public String toString() {
+		return this.getTitle()+ ", by: " + authorsName();
+	}
+	
+	public String authorsName() {
+		String s="";
+		for(Author a: authors) {
+			s+= a.getFirstName() + a.getLastName() + " ";
+		}
+		return s;
+	}
 	
 	
 	
