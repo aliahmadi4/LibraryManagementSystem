@@ -78,7 +78,7 @@ public class Main {
 		HashMap<String, Member> books = da.readBooks();
 		System.out.println(books);
 		
-		HashMap<Integer, Member> records = da.readRecords();
+		HashMap<Integer, Member> records = da.readCheckoutRecords();
 		System.out.println(records);
 	}
 

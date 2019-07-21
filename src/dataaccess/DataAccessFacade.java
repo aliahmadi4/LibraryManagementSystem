@@ -113,7 +113,7 @@ public class DataAccessFacade implements DataAccess {
 		return books;
 	}
 	
-	public HashMap<Integer, Member> readRecords(){
+	public HashMap<Integer, Member> readCheckoutRecords(){
 		ObjectInputStream in = null;
 		HashMap<Integer, Member> checkoutrecords = new HashMap<>();
 		try {

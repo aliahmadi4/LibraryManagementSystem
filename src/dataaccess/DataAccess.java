@@ -16,6 +16,6 @@ public interface DataAccess {
 	
 	//CheckoutRecord
 	public void saveCheckoutRecord(CheckoutRecord checkout);
-	public HashMap<Integer, Member> readRecords();
+	public HashMap<Integer, Member> readCheckoutRecords();
 	
 }
