@@ -1,6 +1,8 @@
 package classes;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable{
 
 	private String street;
 	private String city;

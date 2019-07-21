@@ -1,5 +1,6 @@
 package classes;
 
+
 public class Author extends Person{
 
 	private String credentials;

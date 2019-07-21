@@ -1,8 +1,9 @@
 package classes;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CheckoutRecord {
+public class CheckoutRecord implements Serializable{
 
 	private Member member;
 	private BookCopy bookCopy;

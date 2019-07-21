@@ -1,6 +1,8 @@
 package classes;
 
-public class BookCopy {
+import java.io.Serializable;
+
+public class BookCopy implements Serializable{
 
 	private int copyNumber;
 	private Book book;
