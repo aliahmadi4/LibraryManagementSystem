@@ -32,4 +32,5 @@ public class Person implements Serializable{
 		return phoneNumber;
 	}
 	
+	//private static final long serialVersionUID = -2226197306790714013L;
 }

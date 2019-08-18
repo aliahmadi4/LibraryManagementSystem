@@ -94,13 +94,13 @@ public class DataAccessFacade implements DataAccess {
 		}
 		return members;
 	}
-	public HashMap<String, Member> readBooks(){
+	public HashMap<String, Book> readBooks(){
 		ObjectInputStream in = null;
-		HashMap<String, Member> books = new HashMap<>();
+		HashMap<String, Book> books = new HashMap<>();
 		try {
 			Path path = FileSystems.getDefault().getPath(OUTPUT_DIR, Table.BOOKS.name());
 			in = new ObjectInputStream(Files.newInputStream(path));
-			books = (HashMap<String, Member>)in.readObject();
+			books = (HashMap<String, Book>)in.readObject();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -113,13 +113,13 @@ public class DataAccessFacade implements DataAccess {
 		return books;
 	}
 	
-	public HashMap<Integer, Member> readCheckoutRecords(){
+	public HashMap<Integer, CheckoutRecord> readCheckoutRecords(){
 		ObjectInputStream in = null;
-		HashMap<Integer, Member> checkoutrecords = new HashMap<>();
+		HashMap<Integer, CheckoutRecord> checkoutrecords = new HashMap<>();
 		try {
 			Path path = FileSystems.getDefault().getPath(OUTPUT_DIR, Table.RECORDS.name());
 			in = new ObjectInputStream(Files.newInputStream(path));
-			checkoutrecords = (HashMap<Integer, Member>)in.readObject();
+			checkoutrecords = (HashMap<Integer, CheckoutRecord>)in.readObject();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -130,6 +130,34 @@ public class DataAccessFacade implements DataAccess {
 			}
 		}
 		return checkoutrecords;
+	}
+
+	
+	public List<Member> readMembersList() {
+		
+		List<Member> members = new ArrayList<Member>();
+		for(Member m: readMembers().values()) {
+			members.add(m);
+		}
+		return members;
+	}
+
+	@Override
+	public List<Book> readBooksList() {
+		List<Book> books = new ArrayList<>();
+		for(Book b: readBooks().values()) {
+			books.add(b);
+		}
+		return books;
+	}
+
+	@Override
+	public List<CheckoutRecord> readCheckoutRecordsList() {
+		List<CheckoutRecord> checkoutRecords = new ArrayList<>();
+		for(CheckoutRecord cr: readCheckoutRecords().values()) {
+			checkoutRecords.add(cr);
+		}
+		return checkoutRecords;
 	}
 	
 }

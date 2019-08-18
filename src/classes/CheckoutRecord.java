@@ -18,6 +18,7 @@ public class CheckoutRecord implements Serializable{
 		this.checkoutDate = LocalDate.now();
 		this.dueDate = LocalDate.now().plusDays(bookCopy.getBook().getCheckoutLength());
 	}
+	
 	public CheckoutRecord(int id, Member member, BookCopy bookCopy, LocalDate checkoutDate) {
 		this.id = id;
 		this.member = member;
@@ -25,7 +26,6 @@ public class CheckoutRecord implements Serializable{
 		this.checkoutDate = checkoutDate;
 		this.dueDate = checkoutDate.plusDays(bookCopy.getBook().getCheckoutLength());
 	}
-
 	
 	public int getId() {
 		return id;

@@ -1,7 +1,8 @@
 package classes;
 
+import java.io.Serializable;
 
-public class Author extends Person{
+public class Author extends Person implements Serializable{
 
 	private String credentials;
 	private String shortBio;
@@ -21,5 +22,8 @@ public class Author extends Person{
 		return shortBio;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return getFirstName() +" "+getLastName();
+	}
 }

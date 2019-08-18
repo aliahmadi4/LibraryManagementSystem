@@ -32,6 +32,10 @@ public class Address implements Serializable{
 		return zip;
 	}
 	
+	public String toString() {
+		return getStreet() +", "+ getCity() +", "+getState() +", "+getZip();
+	}
+	//private static final long serialVersionUID = 1L;
 	
 	
 	

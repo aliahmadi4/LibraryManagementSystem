@@ -23,7 +23,7 @@ public class Main {
 		//System.out.println(mmbr1);
 		
 		//Authors
-		Author author1 = new Author("Authur", "Trump", add, "641-451-3305", "Phd", "Nobel Prize Holder");
+		Author author1 = new Author("Donald", "Trump", add, "641-451-3305", "Phd", "Nobel Prize Holder");
 		List<Author> authors = new ArrayList<>();
 		authors.add(author1);
 		
@@ -75,10 +75,10 @@ public class Main {
 		HashMap<Integer, Member> members = da.readMembers();
 		System.out.println(members);
 		
-		HashMap<String, Member> books = da.readBooks();
+		HashMap<String, Book> books = da.readBooks();
 		System.out.println(books);
 		
-		HashMap<Integer, Member> records = da.readCheckoutRecords();
+		HashMap<Integer, CheckoutRecord> records = da.readCheckoutRecords();
 		System.out.println(records);
 	}
 

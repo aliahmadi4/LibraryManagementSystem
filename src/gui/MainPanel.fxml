@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainPanelController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="700.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Member">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Add New Member" />
+                        <MenuItem mnemonicParsing="false" text="Edit Member" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Book">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Add New Book" />
+                        <MenuItem mnemonicParsing="false" text="Add Book Copy" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Checkout">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="New Checkout" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Members">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="memberTable" layoutX="1.0" layoutY="1.0" prefHeight="346.0" prefWidth="742.0">
+                                <columns>
+                                  <TableColumn fx:id="memberTableId" prefWidth="75.0" text="ID" />
+                                  <TableColumn fx:id="memberTableFirstName" prefWidth="135.0" text="First Name" />
+                                    <TableColumn fx:id="memberTableLastName" prefWidth="142.0" text="Last Name" />
+                                    <TableColumn fx:id="memberTableAddress" prefWidth="176.0" text="Address" />
+                                    <TableColumn fx:id="memberTablePhone" prefWidth="134.0" text="Phone" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Books">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="booksTable" layoutX="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="346.0" prefWidth="700.0">
+                                <columns>
+                                  <TableColumn fx:id="title" prefWidth="75.0" text="Title" />
+                                  <TableColumn fx:id="isbn" prefWidth="75.0" text="ISBN" />
+                                    <TableColumn fx:id="checkoutLength" prefWidth="124.0" text="Checkout Length" />
+                                    <TableColumn fx:id="authors" prefWidth="124.0" text="Authors" />
+                                </columns>
+                              </TableView>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Checkout Records">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="checkoutRecordTable" layoutX="1.0" layoutY="1.0" prefHeight="345.0" prefWidth="700.0">
+                                <columns>
+                                  <TableColumn fx:id="checkoutId" prefWidth="69.0" text="ID" />
+                                  <TableColumn fx:id="checkoutMember" prefWidth="142.0" text="Member Name" />
+                                    <TableColumn fx:id="checkoutBookCopy" prefWidth="163.0" text="Book Copy" />
+                                    <TableColumn fx:id="checkoutDate" prefWidth="167.0" text="Checkout Date" />
+                                    <TableColumn fx:id="checkoutDueDate" prefWidth="142.0" text="Due Date" />
+                                </columns>
+                              </TableView>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
