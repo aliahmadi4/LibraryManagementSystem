@@ -18,9 +18,9 @@ public class DataAccessFacade implements DataAccess {
 	public static final String OUTPUT_DIR = System.getProperty("user.dir") + "\\src\\dataaccess\\storage";
 	public static final String DATE_PATTERN = "MM/dd/yyyy";
 	
-	Map<Integer, Member> members = new HashMap<>();
-	Map<String, Book> books = new HashMap<>();
-	Map<Integer, CheckoutRecord> records = new HashMap<>();
+	Map<Integer, Member> members = readMembers();
+	Map<String, Book> books = readBooks();
+	Map<Integer, CheckoutRecord> records = readCheckoutRecords();
 	
 	public void saveMember(Member member) {
 		members.put(member.getMemberId(), member);

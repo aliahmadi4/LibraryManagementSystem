@@ -23,7 +23,7 @@ public class Main {
 		//System.out.println(mmbr1);
 		
 		//Authors
-		Author author1 = new Author("Donald", "Trump", add, "641-451-3305", "Phd", "Nobel Prize Holder");
+		Author author1 = new Author(1, "Donald", "Trump", add, "641-451-3305", "Phd", "Nobel Prize Holder");
 		List<Author> authors = new ArrayList<>();
 		authors.add(author1);
 		

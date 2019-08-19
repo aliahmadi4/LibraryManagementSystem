@@ -18,13 +18,13 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Member">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Add New Member" />
+                        <MenuItem fx:id="addNewMemberClick" mnemonicParsing="false" onAction="#openNewMemberWindow" text="Add New Member" />
                         <MenuItem mnemonicParsing="false" text="Edit Member" />
                   </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Book">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Add New Book" />
+                        <MenuItem mnemonicParsing="false" onAction="#newBook" text="Add New Book" />
                         <MenuItem mnemonicParsing="false" text="Add Book Copy" />
                      </items>
                   </Menu>
@@ -90,6 +90,9 @@
               </tabs>
             </TabPane>
          </center>
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#update" text="Update Tables" BorderPane.alignment="CENTER" />
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

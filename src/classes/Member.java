@@ -5,13 +5,15 @@ import java.util.Objects;
 
 public class Member extends Person implements Serializable{
 
-	private static final long serialVersionUID = -2226197306790714013L;
+	//private static final long serialVersionUID = -2226197306790714013L;
 	private Integer memberId;
 
 	public Member(String firstName, String lastName, Address address, String phoneNumber, Integer memberId) {
 		super(firstName, lastName, address, phoneNumber);
 		this.memberId = memberId;
 	}
+	
+	
 
 	public Integer getMemberId() {
 		return memberId;
