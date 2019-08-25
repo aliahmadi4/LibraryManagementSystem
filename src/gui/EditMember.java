@@ -7,22 +7,23 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class NewBook extends Application {
-	public static Stage newBookStage;
+public class EditMember extends Application {
+	public static Stage editMemberStage;
 	
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		this.newBookStage = new Stage();
-		this.newBookStage.setTitle("New Book");
+		this.editMemberStage = new Stage();
+		this.editMemberStage.setTitle("Edit Member");
 		showStage();
+		
 	}
 
 	public void showStage() throws IOException	{
-		Parent p = FXMLLoader.load(getClass().getResource("NewBook.fxml"));
+		Parent p = FXMLLoader.load(getClass().getResource("EditMember.fxml"));
 		Scene scene = new Scene(p);
-		newBookStage.setScene(scene);
-		newBookStage.show();
+		editMemberStage.setScene(scene);
+		editMemberStage.show();
 	}
 	
 	public static void main(String[] args) {

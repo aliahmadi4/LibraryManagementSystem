@@ -1,5 +1,5 @@
 package dataaccess;
 
 public enum Table {
-	MEMBERS, BOOKS, RECORDS
+	MEMBERS, BOOKS, RECORDS, USERS
 }

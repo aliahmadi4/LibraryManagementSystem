@@ -1,10 +1,10 @@
 package gui;
 
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import classes.Address;
-import classes.Author;
 import classes.Member;
 import dataaccess.DataAccess;
 import dataaccess.DataAccessFacade;
@@ -12,13 +12,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class NewAuthorControler implements Initializable {
+public class EditMemberControler implements Initializable {
 
 	@FXML
 	private TextField zip;
-
+	
 	@FXML
 	private TextField id;
 
@@ -42,35 +43,38 @@ public class NewAuthorControler implements Initializable {
 
 	@FXML
 	private TextField state;
+	
+	@FXML
+	private TextField search;
 
 	@FXML
 	private Button saveBtn;
-	@FXML
-	private TextField credentials;
-	@FXML
-	private TextField shortBio;
 	
 
 	@FXML
 	void saveAction(ActionEvent event) {
-		Address address = new Address(street.getText(), city.getText(), state.getText(),
-				Integer.parseInt(zip.getText()));
-		Author a = new Author(Integer.parseInt(id.getText()), firstName.getText(), lastName.getText(), address, phoneNumber.getText(),
-				credentials.getText(), shortBio.getText());
-
-		NewBookControler.authors.add(a);
+		Address address = new Address(street.getText(), city.getText(), state.getText(), Integer.parseInt(zip.getText()));
+		Member mmr = new Member(firstName.getText(), lastName.getText(), address, phoneNumber.getText(), Integer.parseInt(id.getText()));
 		
-		NewAuthor.newAuthorStage.close();
+		DataAccess da = new DataAccessFacade();
+		da.saveMember(mmr);
+		NewMember.newMemberStage.close();
 	}
 
 	@FXML
 	void cancelAction(ActionEvent event) {
-		NewAuthor.newAuthorStage.close();
+		NewMember.newMemberStage.close();
 	}
+	
+	@FXML
+    void searchAction(ActionEvent event) {
+		System.out.println(search.getText());
+    }
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
+		
 	}
 
 }

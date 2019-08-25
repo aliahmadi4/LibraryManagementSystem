@@ -18,9 +18,28 @@ public class DataAccessFacade implements DataAccess {
 	public static final String OUTPUT_DIR = System.getProperty("user.dir") + "\\src\\dataaccess\\storage";
 	public static final String DATE_PATTERN = "MM/dd/yyyy";
 	
+	Map<String, User> users = readUsers();
 	Map<Integer, Member> members = readMembers();
 	Map<String, Book> books = readBooks();
 	Map<Integer, CheckoutRecord> records = readCheckoutRecords();
+	
+	public void saveUser(User user) {
+		users.put(user.getUsername(), user);
+		ObjectOutputStream out = null;
+		try {
+			Path path = FileSystems.getDefault().getPath(OUTPUT_DIR, Table.USERS.name());
+			out = new ObjectOutputStream(Files.newOutputStream(path));
+			out.writeObject(users);
+		} catch(IOException e) {
+			e.printStackTrace();
+		} finally {
+			if(out != null) {
+				try {
+					out.close();
+				} catch(Exception e) {}
+			}
+		}
+	}
 	
 	public void saveMember(Member member) {
 		members.put(member.getMemberId(), member);
@@ -74,6 +93,24 @@ public class DataAccessFacade implements DataAccess {
 				} catch(Exception e) {}
 			}
 		}
+	}
+	public HashMap<String, User> readUsers() {
+		ObjectInputStream in = null;
+		HashMap<String, User> users = new HashMap<>();
+		try {
+			Path path = FileSystems.getDefault().getPath(OUTPUT_DIR, Table.USERS.name());
+			in = new ObjectInputStream(Files.newInputStream(path));
+			users = (HashMap<String, User>)in.readObject();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(in != null) {
+				try {
+					in.close();
+				} catch(Exception e) {}
+			}
+		}
+		return users;
 	}
 	
 	public HashMap<Integer, Member> readMembers() {

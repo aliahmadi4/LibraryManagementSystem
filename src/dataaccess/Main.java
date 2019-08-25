@@ -12,6 +12,10 @@ public class Main {
 
 
 	public static void main(String[] args) {
+		
+		User user = new User("ali", "ali123", UserRole.ADMIN);
+		User user2 = new User("john", "john123", UserRole.LIBRARIAN);
+		
 
 		Address add = new Address("1000N", "Fairfield", "Iowa", 52557);
 		
@@ -72,6 +76,9 @@ public class Main {
 		da.saveCheckoutRecord(checkout7);
 		da.saveCheckoutRecord(checkout8);
 		
+		da.saveUser(user);
+		da.saveUser(user2);
+		
 		HashMap<Integer, Member> members = da.readMembers();
 		System.out.println(members);
 		
@@ -80,6 +87,9 @@ public class Main {
 		
 		HashMap<Integer, CheckoutRecord> records = da.readCheckoutRecords();
 		System.out.println(records);
+		
+		HashMap<String, User> users = da.readUsers();
+		System.out.println(users);
 	}
 
 }

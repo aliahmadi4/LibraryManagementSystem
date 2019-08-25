@@ -6,6 +6,10 @@ import java.util.List;
 import classes.*;
 
 public interface DataAccess {
+	//User
+	public void saveUser(User user);
+	public HashMap<String, User> readUsers();
+	
 	//Members
 	public void saveMember(Member member);
 	public HashMap<Integer, Member> readMembers();

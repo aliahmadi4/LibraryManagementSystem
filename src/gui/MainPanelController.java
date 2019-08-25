@@ -19,11 +19,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import dataaccess.DataAccess;
 import dataaccess.DataAccessFacade;
 import classes.*;
 
-public class MainPanelController implements Initializable {
+public class MainPanelController{
 
 	@FXML
 	private Tab membersTab;
@@ -93,8 +94,8 @@ public class MainPanelController implements Initializable {
 
 	}
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+
+	public void init(Window owner) {
 		populateMembersTable();
 		populateBooksTable();
 		populateCheckoutRecordsTable();
@@ -137,7 +138,7 @@ public class MainPanelController implements Initializable {
 	@FXML
 	void openNewMemberWindow(ActionEvent event) throws Exception {
 		NewMember nm = new NewMember();
-		nm.start(Root.primaryStage);
+		nm.start(Root.getRootStage());
 	}
 
 	@FXML
@@ -150,7 +151,7 @@ public class MainPanelController implements Initializable {
 	@FXML
 	void newBook(ActionEvent event) throws Exception {
 		NewBook nb = new NewBook();
-		nb.start(Root.primaryStage);
+		nb.start(Root.getRootStage());
 		
 	}
 

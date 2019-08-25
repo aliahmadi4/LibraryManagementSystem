@@ -20,6 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class NewBookControler implements Initializable {
+	
 	public static List<Author> authors = new ArrayList<>();
 	@FXML
     private Button cancelBtn;
@@ -59,13 +60,10 @@ public class NewBookControler implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
+		authorsLabel.setText(authors.toString());
 	}
+
 	
-	@FXML
-    void addAuthor(ActionEvent event) throws Exception {
-		NewAuthor na = new NewAuthor();
-		na.start(Root.primaryStage);
-    }
+	
 
 }
