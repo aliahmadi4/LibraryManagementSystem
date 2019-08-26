@@ -7,9 +7,9 @@ public class Address implements Serializable{
 	private String street;
 	private String city;
 	private String state;
-	private int zip;
+	private Integer zip;
 	
-	public Address(String street, String city, String state, int zip) {
+	public Address(String street, String city, String state, Integer zip) {
 		this.street = street;
 		this.city = city;
 		this.state = state;
@@ -28,7 +28,7 @@ public class Address implements Serializable{
 		return state;
 	}
 
-	public int getZip() {
+	public Integer getZip() {
 		return zip;
 	}
 	

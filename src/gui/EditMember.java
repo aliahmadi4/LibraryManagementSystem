@@ -6,29 +6,27 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
-public class EditMember extends Application {
-	public static Stage editMemberStage;
+public class EditMember extends Stage {
+	public static EditMember INSTANCE = new EditMember();
+	public static EditMemberController controller;
 	
 	
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		this.editMemberStage = new Stage();
-		this.editMemberStage.setTitle("Edit Member");
-		showStage();
-		
-	}
-
-	public void showStage() throws IOException	{
-		Parent p = FXMLLoader.load(getClass().getResource("EditMember.fxml"));
-		Scene scene = new Scene(p);
-		editMemberStage.setScene(scene);
-		editMemberStage.show();
-	}
 	
-	public static void main(String[] args) {
-		launch(args);
+	public void init(Window owner) throws IOException {
+		try {
+			FXMLLoader  loader = new FXMLLoader(getClass().getResource("EditMember.fxml"));
+			Scene scene = new Scene(loader.load());
+			controller = loader.getController();
+			setScene(scene);
+			controller.init();
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 
+	
 	
 }

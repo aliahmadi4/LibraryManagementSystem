@@ -6,28 +6,32 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
-public class NewMember extends Application {
-	public static Stage newMemberStage;
-	
-	
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		this.newMemberStage = new Stage();
-		this.newMemberStage.setTitle("New Member");
-		showStage();
-		
-	}
+public class NewMember extends Stage {
 
-	public void showStage() throws IOException	{
-		Parent p = FXMLLoader.load(getClass().getResource("NewMember.fxml"));
-		Scene scene = new Scene(p);
-		newMemberStage.setScene(scene);
-		newMemberStage.show();
-	}
 	
-	public static void main(String[] args) {
-		launch(args);
+	
+	public static NewMember INSTANCE = new NewMember();
+	public static NewMemberController Controller;
+
+	public void init(Window owner) throws IOException {
+		if (Login.INSTANCE.getOwner() == null)
+			Login.INSTANCE.initOwner(owner);
+
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("NewMember.fxml"));
+			Scene scene = new Scene(loader.load());
+			Controller = loader.getController();
+
+			resizableProperty().setValue(Boolean.FALSE);
+			setScene(scene);
+
+			Controller.init();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}		
 	}
 
 	

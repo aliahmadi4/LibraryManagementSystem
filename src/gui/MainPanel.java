@@ -24,7 +24,7 @@ public class MainPanel extends Stage {
 			resizableProperty().setValue(Boolean.FALSE);
 			setScene(scene);
 
-			Controller.init(Root.getRootStage());
+			Controller.init();
 
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -95,7 +95,7 @@ public class MainPanelController{
 	}
 
 
-	public void init(Window owner) {
+	public void init() {
 		populateMembersTable();
 		populateBooksTable();
 		populateCheckoutRecordsTable();
@@ -137,8 +137,10 @@ public class MainPanelController{
 
 	@FXML
 	void openNewMemberWindow(ActionEvent event) throws Exception {
-		NewMember nm = new NewMember();
-		nm.start(Root.getRootStage());
+		NewMember.INSTANCE.init(Root.getRootStage());
+		NewMember.INSTANCE.show();
+		
+		
 	}
 
 	@FXML
@@ -155,4 +157,10 @@ public class MainPanelController{
 		
 	}
 
+	@FXML
+    void editMemberClicked(ActionEvent event) throws Exception {
+		EditMember.INSTANCE.init(Root.getRootStage());
+		EditMember.INSTANCE.show();
+		
+    }
 }

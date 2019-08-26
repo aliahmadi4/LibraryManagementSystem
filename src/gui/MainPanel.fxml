@@ -19,7 +19,7 @@
                 <Menu mnemonicParsing="false" text="Member">
                   <items>
                         <MenuItem fx:id="addNewMemberClick" mnemonicParsing="false" onAction="#openNewMemberWindow" text="Add New Member" />
-                        <MenuItem mnemonicParsing="false" text="Edit Member" />
+                        <MenuItem mnemonicParsing="false" onAction="#editMemberClicked" text="Edit Member" />
                   </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Book">

@@ -196,5 +196,11 @@ public class DataAccessFacade implements DataAccess {
 		}
 		return checkoutRecords;
 	}
+
+	@Override
+	public Member findMember(int id) {
+		HashMap<Integer, Member> members = readMembers();
+		return members.get(id);
+	}
 	
 }

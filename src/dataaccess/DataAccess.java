@@ -14,6 +14,7 @@ public interface DataAccess {
 	public void saveMember(Member member);
 	public HashMap<Integer, Member> readMembers();
 	public List<Member> readMembersList();
+	public Member findMember(int id);
 	
 	//Book
 	public void saveBook(Book book);

@@ -12,16 +12,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class EditMemberControler implements Initializable {
+public class NewMemberController {
 
 	@FXML
 	private TextField zip;
 	
 	@FXML
 	private TextField id;
+
 
 	@FXML
 	private TextField firstName;
@@ -43,13 +43,9 @@ public class EditMemberControler implements Initializable {
 
 	@FXML
 	private TextField state;
-	
-	@FXML
-	private TextField search;
 
 	@FXML
 	private Button saveBtn;
-	
 
 	@FXML
 	void saveAction(ActionEvent event) {
@@ -58,23 +54,17 @@ public class EditMemberControler implements Initializable {
 		
 		DataAccess da = new DataAccessFacade();
 		da.saveMember(mmr);
-		NewMember.newMemberStage.close();
+		NewMember.INSTANCE.hide();
 	}
 
 	@FXML
 	void cancelAction(ActionEvent event) {
-		NewMember.newMemberStage.close();
+		NewMember.INSTANCE.hide();
 	}
+
 	
-	@FXML
-    void searchAction(ActionEvent event) {
-		System.out.println(search.getText());
-    }
+	public void init() {
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-
-		
 	}
 
 }
