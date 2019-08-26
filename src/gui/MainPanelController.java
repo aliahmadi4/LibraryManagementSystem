@@ -152,8 +152,9 @@ public class MainPanelController{
 
 	@FXML
 	void newBook(ActionEvent event) throws Exception {
-		NewBook nb = new NewBook();
-		nb.start(Root.getRootStage());
+		NewBook.INSTANCE.init(Root.getRootStage());
+		NewBook.INSTANCE.show();
+		
 		
 	}
 

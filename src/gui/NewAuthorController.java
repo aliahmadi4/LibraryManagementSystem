@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class NewAuthorControler implements Initializable {
+public class NewAuthorController  {
 
 	@FXML
 	private TextField zip;
@@ -58,18 +58,19 @@ public class NewAuthorControler implements Initializable {
 		Author a = new Author(Integer.parseInt(id.getText()), firstName.getText(), lastName.getText(), address, phoneNumber.getText(),
 				credentials.getText(), shortBio.getText());
 
-		NewBookControler.authors.add(a);
+		NewBook.INSTANCE.controller.authors.add(a);
 		
-		NewAuthor.newAuthorStage.close();
+		NewAuthor.INSTANCE.hide();
+		NewBook.INSTANCE.controller.init();
 	}
 
 	@FXML
 	void cancelAction(ActionEvent event) {
-		NewAuthor.newAuthorStage.close();
+		NewAuthor.INSTANCE.hide();
 	}
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	
+	public void init() {
 
 	}
 

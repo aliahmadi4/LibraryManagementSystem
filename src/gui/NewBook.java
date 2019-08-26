@@ -6,27 +6,25 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
-public class NewBook extends Application {
-	public static Stage newBookStage;
+public class NewBook extends Stage {
+	public static NewBook INSTANCE = new NewBook();
+	public static NewBookController controller;
 	
 	
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		this.newBookStage = new Stage();
-		this.newBookStage.setTitle("New Book");
-		showStage();
-	}
-
-	public void showStage() throws IOException	{
-		Parent p = FXMLLoader.load(getClass().getResource("NewBook.fxml"));
-		Scene scene = new Scene(p);
-		newBookStage.setScene(scene);
-		newBookStage.show();
-	}
 	
-	public static void main(String[] args) {
-		launch(args);
+	public void init(Window owner) throws IOException {
+		try {
+			FXMLLoader  loader = new FXMLLoader(getClass().getResource("NewBook.fxml"));
+			Scene scene = new Scene(loader.load());
+			controller = loader.getController();
+			setScene(scene);
+			controller.init();
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	
