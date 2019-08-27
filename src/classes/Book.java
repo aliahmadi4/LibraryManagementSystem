@@ -10,9 +10,9 @@ public class Book implements Serializable{
 	private String isbn;
 	private List<Author> authors;
 	private List<BookCopy> copies = new ArrayList<>();
-	private int checkoutLength;
+	private Integer checkoutLength;
 	
-	public Book(String title, String isbn, List<Author> authors, int numberOfCopy,int checkoutLength) {
+	public Book(String title, String isbn, List<Author> authors, int numberOfCopy,Integer checkoutLength) {
 		this.title = title;
 		this.isbn = isbn;
 		this.authors = authors;
@@ -40,7 +40,7 @@ public class Book implements Serializable{
 		return copies.stream().map(x->x.isAvailable()).reduce(false, (x,y)->x||y);
 	}
 	
-	public int getCheckoutLength() {
+	public Integer getCheckoutLength() {
 		return checkoutLength;
 	}
 

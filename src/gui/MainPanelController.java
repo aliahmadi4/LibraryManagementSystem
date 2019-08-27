@@ -164,4 +164,11 @@ public class MainPanelController{
 		EditMember.INSTANCE.show();
 		
     }
+	
+	@FXML
+    void editBookClicked(ActionEvent event) throws Exception {
+		EditBook.INSTANCE.init(Root.getRootStage());
+		EditBook.INSTANCE.show();
+		
+    }
 }

@@ -20,6 +20,7 @@ public interface DataAccess {
 	public void saveBook(Book book);
 	public HashMap<String, Book> readBooks();
 	public List<Book> readBooksList();
+	public Book findBook(String isbn);
 	
 	//CheckoutRecord
 	public void saveCheckoutRecord(CheckoutRecord checkout);

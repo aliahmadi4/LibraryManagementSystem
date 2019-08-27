@@ -202,5 +202,11 @@ public class DataAccessFacade implements DataAccess {
 		HashMap<Integer, Member> members = readMembers();
 		return members.get(id);
 	}
+
+	@Override
+	public Book findBook(String isbn) {
+		HashMap<String, Book> books = readBooks();
+		return books.get(isbn);
+	}
 	
 }

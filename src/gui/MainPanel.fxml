@@ -25,6 +25,7 @@
                   <Menu mnemonicParsing="false" text="Book">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#newBook" text="Add New Book" />
+                        <MenuItem mnemonicParsing="false" onAction="#editBookClicked" text="Edit Book" />
                         <MenuItem mnemonicParsing="false" text="Add Book Copy" />
                      </items>
                   </Menu>
