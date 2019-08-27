@@ -24,7 +24,7 @@ import dataaccess.DataAccess;
 import dataaccess.DataAccessFacade;
 import classes.*;
 
-public class MainPanelController{
+public class MainPanelController {
 
 	@FXML
 	private Tab membersTab;
@@ -70,6 +70,9 @@ public class MainPanelController{
 
 	@FXML
 	private TableColumn checkoutLength;
+	
+	@FXML
+	private TableColumn copies;
 
 	@FXML
 	private TableView<CheckoutRecord> checkoutRecordTable;
@@ -93,7 +96,6 @@ public class MainPanelController{
 	void fillMemberTable(ActionEvent event) throws IOException {
 
 	}
-
 
 	public void init() {
 		populateMembersTable();
@@ -120,6 +122,7 @@ public class MainPanelController{
 		title.setCellValueFactory(new PropertyValueFactory<Book, String>("title"));
 		isbn.setCellValueFactory(new PropertyValueFactory<Book, String>("isbn"));
 		checkoutLength.setCellValueFactory(new PropertyValueFactory<Book, String>("checkoutLength"));
+		copies.setCellValueFactory(new PropertyValueFactory<Book, Integer>("noOfCopy"));
 		authors.setCellValueFactory(new PropertyValueFactory<Book, Author>("authors"));
 	}
 
@@ -139,8 +142,7 @@ public class MainPanelController{
 	void openNewMemberWindow(ActionEvent event) throws Exception {
 		NewMember.INSTANCE.init(Root.getRootStage());
 		NewMember.INSTANCE.show();
-		
-		
+
 	}
 
 	@FXML
@@ -154,21 +156,28 @@ public class MainPanelController{
 	void newBook(ActionEvent event) throws Exception {
 		NewBook.INSTANCE.init(Root.getRootStage());
 		NewBook.INSTANCE.show();
-		
-		
+
 	}
 
 	@FXML
-    void editMemberClicked(ActionEvent event) throws Exception {
+	void editMemberClicked(ActionEvent event) throws Exception {
 		EditMember.INSTANCE.init(Root.getRootStage());
 		EditMember.INSTANCE.show();
-		
-    }
-	
+
+	}
+
 	@FXML
-    void editBookClicked(ActionEvent event) throws Exception {
+	void editBookClicked(ActionEvent event) throws Exception {
 		EditBook.INSTANCE.init(Root.getRootStage());
 		EditBook.INSTANCE.show();
-		
-    }
+
+	}
+
+	@FXML
+	void addCopyClicked(ActionEvent event) throws Exception {
+		AddBookCopy.INSTANCE.init(Root.getRootStage());
+		AddBookCopy.INSTANCE.show();
+
+	}
+
 }

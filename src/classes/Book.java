@@ -43,6 +43,9 @@ public class Book implements Serializable{
 	public Integer getCheckoutLength() {
 		return checkoutLength;
 	}
+	public Integer getNoOfCopy() {
+		return copies.size();
+	}
 
 	public BookCopy checkout() {
 		if(isAvailable()) {

@@ -26,7 +26,7 @@
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#newBook" text="Add New Book" />
                         <MenuItem mnemonicParsing="false" onAction="#editBookClicked" text="Edit Book" />
-                        <MenuItem mnemonicParsing="false" text="Add Book Copy" />
+                        <MenuItem mnemonicParsing="false" onAction="#addCopyClicked" text="Add Book Copy" />
                      </items>
                   </Menu>
                 <Menu mnemonicParsing="false" text="Checkout">
@@ -63,10 +63,11 @@
                            <children>
                               <TableView fx:id="booksTable" layoutX="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="346.0" prefWidth="700.0">
                                 <columns>
-                                  <TableColumn fx:id="title" prefWidth="75.0" text="Title" />
-                                  <TableColumn fx:id="isbn" prefWidth="75.0" text="ISBN" />
-                                    <TableColumn fx:id="checkoutLength" prefWidth="124.0" text="Checkout Length" />
-                                    <TableColumn fx:id="authors" prefWidth="124.0" text="Authors" />
+                                  <TableColumn fx:id="title" prefWidth="197.0" text="Title" />
+                                  <TableColumn fx:id="isbn" prefWidth="100.0" text="ISBN" />
+                                    <TableColumn fx:id="checkoutLength" prefWidth="117.0" text="Checkout Length" />
+                                    <TableColumn fx:id="authors" minWidth="0.0" prefWidth="134.0" text="Authors" />
+                                    <TableColumn fx:id="copies" prefWidth="230.0" text="Copies" />
                                 </columns>
                               </TableView>
                            </children></AnchorPane>

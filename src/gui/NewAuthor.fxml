@@ -41,7 +41,7 @@
             <TextField fx:id="zip" GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveAction" text="Save" GridPane.columnIndex="3" GridPane.rowIndex="6" />
             <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelAction" text="Cancel" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Label text="Add New Member" GridPane.columnIndex="1" />
+            <Label text="Add New Author" GridPane.columnIndex="1" />
             <Label text="ID" GridPane.rowIndex="1" />
             <TextField fx:id="id" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="shortBio" GridPane.columnIndex="1" GridPane.rowIndex="5" />

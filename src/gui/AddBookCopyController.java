@@ -18,7 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class EditBookController {
+public class AddBookCopyController {
 
 	public List<Author> authors = new ArrayList<>();
 	@FXML
@@ -36,10 +36,6 @@ public class EditBookController {
 	@FXML
 	private TextField noOfCopy;
 
-	@FXML
-	private Button saveBtn;
-
-
 
     @FXML
     private Button findBtn;
@@ -53,7 +49,8 @@ public class EditBookController {
     
     @FXML
     private Label authorsLabel;
-
+    @FXML
+	private TextField copyNo;
    
 
     @FXML
@@ -75,17 +72,18 @@ public class EditBookController {
     
     
 	@FXML
-	void saveAction(ActionEvent event) {
-		Book book = new Book(title.getText(), isbn.getText(), authors, Integer.parseInt(noOfCopy.getText()),
+	void addCopyClicked(ActionEvent event) {
+		int totalNoOfCopy = Integer.parseInt(noOfCopy.getText())+Integer.parseInt(copyNo.getText());
+		Book book = new Book(title.getText(), isbn.getText(), authors, totalNoOfCopy,
 				Integer.parseInt(checkoutLength.getText()));
 		DataAccess da = new DataAccessFacade();
 		da.saveBook(book);
-		EditBook.INSTANCE.close();
+		AddBookCopy.INSTANCE.close();
 	}
 
 	@FXML
 	void cancelAction(ActionEvent event) {
-		EditBook.INSTANCE.close();
+		AddBookCopy.INSTANCE.close();
 	}
 
 	public void init() {
@@ -93,10 +91,6 @@ public class EditBookController {
 		errorText.setVisible(false);
 	}
 
-	@FXML
-	void addAuthor(ActionEvent event) throws Exception {
-		NewAuthor.INSTANCE.init(Root.getRootStage());
-		NewAuthor.INSTANCE.show();
-	}
+	
 
 }
