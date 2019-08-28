@@ -23,6 +23,7 @@ public class Login extends Stage {
 
 			resizableProperty().setValue(Boolean.FALSE);
 			setScene(scene);
+			setTitle("Login");
 
 			Controller.init();
 

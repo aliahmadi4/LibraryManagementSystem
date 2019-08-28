@@ -31,7 +31,7 @@
                   </Menu>
                 <Menu mnemonicParsing="false" text="Checkout">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="New Checkout" />
+                    <MenuItem mnemonicParsing="false" onAction="#newCheckoutClicked" text="New Checkout" />
                   </items>
                 </Menu>
               </menus>
@@ -63,11 +63,12 @@
                            <children>
                               <TableView fx:id="booksTable" layoutX="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="346.0" prefWidth="700.0">
                                 <columns>
-                                  <TableColumn fx:id="title" prefWidth="197.0" text="Title" />
-                                  <TableColumn fx:id="isbn" prefWidth="100.0" text="ISBN" />
-                                    <TableColumn fx:id="checkoutLength" prefWidth="117.0" text="Checkout Length" />
-                                    <TableColumn fx:id="authors" minWidth="0.0" prefWidth="134.0" text="Authors" />
-                                    <TableColumn fx:id="copies" prefWidth="230.0" text="Copies" />
+                                  <TableColumn fx:id="title" prefWidth="149.0" text="Title" />
+                                  <TableColumn fx:id="isbn" prefWidth="109.0" text="ISBN" />
+                                    <TableColumn fx:id="checkoutLength" prefWidth="111.0" text="Checkout Length" />
+                                    <TableColumn fx:id="authors" minWidth="0.0" prefWidth="111.0" text="Authors" />
+                                    <TableColumn fx:id="copies" prefWidth="97.0" text="Copies" />
+                                    <TableColumn fx:id="available" prefWidth="97.0" text="Available" />
                                 </columns>
                               </TableView>
                            </children></AnchorPane>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CheckoutController">
+   <children>
+      <BorderPane prefHeight="500.0" prefWidth="600.0">
+         <center>
+            <GridPane maxHeight="100.0" prefHeight="150.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="296.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="204.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Member Id" />
+                  <Label text="Book ISBN" GridPane.rowIndex="1" />
+                  <Label fx:id="availability" text="Availability" textFill="#eb0a0a" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="memberId" GridPane.columnIndex="1" />
+                  <TextField fx:id="isbn" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#findClicked" text="Find" GridPane.columnIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#searchClicked" text="Search" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button fx:id="checkoutBtn" disable="true" mnemonicParsing="false" onAction="#checkoutClicked" text="Checkout" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </center>
+         <top>
+            <Label text="Checkout Record" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </top>
+         <bottom>
+            <TableView fx:id="checkoutRecordTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="checkoutId" prefWidth="54.0" text="Id" />
+                <TableColumn fx:id="checkoutMember" prefWidth="159.0" text="MemberName" />
+                  <TableColumn fx:id="checkoutBookCopy" prefWidth="98.0" text="Book Copy" />
+                  <TableColumn fx:id="checkoutDate" prefWidth="104.0" text="Checkout Date" />
+                  <TableColumn fx:id="checkoutDueDate" prefWidth="121.0" text="Due Date" />
+              </columns>
+            </TableView>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

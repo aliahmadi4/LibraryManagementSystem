@@ -31,6 +31,6 @@ public class Member extends Person implements Serializable{
 	
 
 	public String toString() {
-		return this.getFirstName() + " " + this.getLastName() + " " + this.getAddress().getStreet();
+		return this.getFirstName() + " " + this.getLastName() ;
 	}
 }

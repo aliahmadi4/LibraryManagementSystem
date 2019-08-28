@@ -27,4 +27,7 @@ public interface DataAccess {
 	public HashMap<Integer, CheckoutRecord> readCheckoutRecords();
 	public List<CheckoutRecord> readCheckoutRecordsList();
 	
+	//Checkout of Member
+	public List<CheckoutRecord> searchCheckout(int id);
+	
 }

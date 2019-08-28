@@ -32,8 +32,8 @@ public class BookCopy implements Serializable {
 
 	@Override
 	public String toString() {
-		
-		return getBook().getTitle();
+		return book.getTitle() + " #" + copyNumber;
 	}
+
 
 }

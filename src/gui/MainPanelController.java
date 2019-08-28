@@ -70,9 +70,12 @@ public class MainPanelController {
 
 	@FXML
 	private TableColumn checkoutLength;
-	
+
 	@FXML
 	private TableColumn copies;
+
+    @FXML
+    private TableColumn available;
 
 	@FXML
 	private TableView<CheckoutRecord> checkoutRecordTable;
@@ -124,6 +127,7 @@ public class MainPanelController {
 		checkoutLength.setCellValueFactory(new PropertyValueFactory<Book, String>("checkoutLength"));
 		copies.setCellValueFactory(new PropertyValueFactory<Book, Integer>("noOfCopy"));
 		authors.setCellValueFactory(new PropertyValueFactory<Book, Author>("authors"));
+		available.setCellValueFactory(new PropertyValueFactory<Book, Integer>("availableBookNo"));
 	}
 
 	public void populateCheckoutRecordsTable() {
@@ -178,6 +182,12 @@ public class MainPanelController {
 		AddBookCopy.INSTANCE.init(Root.getRootStage());
 		AddBookCopy.INSTANCE.show();
 
+	}
+
+	@FXML
+	void newCheckoutClicked(ActionEvent event) throws Exception {
+		Checkout.INSTANCE.init(Root.getRootStage());
+		Checkout.INSTANCE.show();
 	}
 
 }

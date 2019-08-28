@@ -64,7 +64,7 @@ public class LoginController {
 
 	@FXML
 	void cancelClick(ActionEvent event) {
-
+		System.exit(0);
 	}
 
 	public void init() {

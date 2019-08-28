@@ -3,6 +3,7 @@ package classes;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Book implements Serializable{
 
@@ -46,6 +47,12 @@ public class Book implements Serializable{
 	public Integer getNoOfCopy() {
 		return copies.size();
 	}
+	public int getAvailableBookNo() {
+		
+		long count= copies.stream().map(x->x.isAvailable()).filter(x->x==true).count();
+		int cc = (int) count;
+		return cc;
+	}
 
 	public BookCopy checkout() {
 		if(isAvailable()) {
@@ -62,11 +69,16 @@ public class Book implements Serializable{
 		}
 		return null;
 	}
+	
 
 	
 	@Override
 	public String toString() {
 		return this.getTitle()+ ", by: " + authorsName();
+	}
+	
+	public String getCopiesNumbers() {
+		return copies.toString();
 	}
 	
 	public String authorsName() {
