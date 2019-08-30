@@ -12,8 +12,8 @@
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="93.0" />
             <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="197.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="61.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="231.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="58.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="234.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -23,31 +23,45 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="First Name" GridPane.rowIndex="2" />
-            <Label text="Last Name" GridPane.rowIndex="3" />
-            <Label text="Phone Number" GridPane.rowIndex="4" />
-            <Label text="Street" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label text="State" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label text="City" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Label text="Zip" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <TextField fx:id="firstName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="lastName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="phoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="street" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <TextField fx:id="state" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <TextField fx:id="city" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <TextField fx:id="zip" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveAction" text="Save" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelAction" text="Cancel" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label text="First Name" GridPane.rowIndex="3" />
+            <Label text="Last Name" GridPane.rowIndex="4" />
+            <Label text="Phone Number" GridPane.rowIndex="5" />
+            <Label text="Street" GridPane.rowIndex="6" />
+            <Label text="State" GridPane.rowIndex="7" />
+            <Label text="City" GridPane.rowIndex="8" />
+            <Label text="Zip" GridPane.rowIndex="9" />
+            <TextField fx:id="firstName" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="lastName" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="phoneNumber" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="street" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="state" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="city" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField fx:id="zip" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveAction" text="Save" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin></Button>
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelAction" text="Cancel" GridPane.columnIndex="2" GridPane.rowIndex="10" />
             <Label text="Edit Member" GridPane.columnIndex="1" />
-            <Label text="ID" GridPane.rowIndex="5" />
-            <TextField fx:id="id" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="ID" GridPane.rowIndex="2" />
+            <TextField fx:id="id" editable="false" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Search" GridPane.rowIndex="1" />
             <TextField fx:id="search" prefHeight="25.0" prefWidth="216.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Button fx:id="findBtn" mnemonicParsing="false" onAction="#findAction" text="Find" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label fx:id="findError" text="could not find the member" textFill="#e80303" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label fx:id="firstNameError" text="Label" textFill="#da0f0f" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label fx:id="lastNameError" text="Label" textFill="#ee0a0a" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label fx:id="phoneError" text="Label" textFill="#e80b0b" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Label fx:id="streetError" text="Label" textFill="#e10606" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Label fx:id="stateError" text="Label" textFill="#eb0404" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Label fx:id="cityError" text="Label" textFill="#e40a0a" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Label fx:id="zipError" text="Label" textFill="#f20a0a" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="9" />
          </children>
          <padding>
             <Insets left="10.0" right="10.0" />

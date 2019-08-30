@@ -54,6 +54,26 @@ public class EditMemberController {
 
 	@FXML
 	private Label findError;
+	
+	@FXML
+	private Label phoneError;
+
+	@FXML
+	private Label firstNameError;
+
+	@FXML
+	private Label lastNameError;
+
+	@FXML
+	private Label stateError;
+
+	@FXML
+	private Label streetError;
+
+	@FXML
+	private Label zipError;
+	@FXML
+	private Label cityError;
 
 	@FXML
 	void findAction(ActionEvent event) {
@@ -75,6 +95,19 @@ public class EditMemberController {
 
 	@FXML
 	void saveAction(ActionEvent event) {
+		
+		Boolean firstNameErrorr = Validation.isValid(firstName.getText(), "String", firstNameError);
+		Boolean lastNameErrorr = Validation.isValid(lastName.getText(), "String", lastNameError);
+		Boolean phoneErrorr=  Validation.isValid(phoneNumber.getText(), "Number", phoneError);
+		Boolean streetErrorr= Validation.isValid(street.getText(), "Address", streetError);
+		Boolean cityErrorr = Validation.isValid(city.getText(), "Address", cityError);
+		Boolean stateErrorr= Validation.isValid(state.getText(), "Address", stateError);
+		Boolean zipErrorr= Validation.isValid(zip.getText(), "Number", zipError);
+		
+		if(!firstNameErrorr || !lastNameErrorr || !phoneErrorr || !streetErrorr || !cityErrorr || !stateErrorr || !zipErrorr) {
+			return;
+		}
+		
 		Address address = new Address(street.getText(), city.getText(), state.getText(),
 				Integer.parseInt(zip.getText()));
 		Member mmr = new Member(firstName.getText(), lastName.getText(), address, phoneNumber.getText(),
