@@ -13,7 +13,10 @@ public class Member extends Person implements Serializable{
 		this.memberId = memberId;
 	}
 	
-	
+	public Member(String firstName, String lastName, Address address, String phoneNumber) {
+		super(firstName, lastName, address, phoneNumber);
+		this.memberId = 0;
+	}
 
 	public Integer getMemberId() {
 		return memberId;
@@ -32,5 +35,9 @@ public class Member extends Person implements Serializable{
 
 	public String toString() {
 		return this.getFirstName() + " " + this.getLastName() ;
+	}
+
+	public void setMemberId(Integer memberId) {
+		this.memberId = memberId;
 	}
 }

@@ -20,10 +20,10 @@ public class Main {
 		Address add = new Address("1000N", "Fairfield", "Iowa", 52557);
 		
 		//Members
-		Member mmbr1 = new Member("Ali", "Ahmadi", add, "641-451-3308", 1);
-		Member mmbr2 = new Member("John", "Doe", add, "641-451-3309", 2);
-		Member mmbr3 = new Member("Bob", "Artist", add, "641-451-3307", 3);
-		Member mmbr4 = new Member("Mike", "Jackson", add, "641-451-3306", 4);
+		Member mmbr1 = new Member("Ali", "Ahmadi", add, "641-451-3308");
+		Member mmbr2 = new Member("John", "Doe", add, "641-451-3309");
+		Member mmbr3 = new Member("Bob", "Artist", add, "641-451-3307");
+		Member mmbr4 = new Member("Mike", "Jackson", add, "641-451-3306");
 		//System.out.println(mmbr1);
 		
 		//Authors

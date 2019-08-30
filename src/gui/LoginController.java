@@ -44,6 +44,7 @@ public class LoginController {
 
 	@FXML
 	void loginClick(ActionEvent event) throws IOException {
+		
 		DataAccess da = new DataAccessFacade();
 		HashMap<String, User> users = da.readUsers();
 

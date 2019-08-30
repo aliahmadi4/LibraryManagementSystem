@@ -44,6 +44,13 @@ public class DataAccessFacade implements DataAccess {
 	}
 
 	public void saveMember(Member member) {
+		HashMap<Integer, Member> mmbrs = readMembers();
+		int nextId=1;
+		if(mmbrs.size() >0) {
+			
+			nextId = mmbrs.get(mmbrs.size()).getMemberId()+1;
+		}
+		member.setMemberId(nextId);
 		members.put(member.getMemberId(), member);
 		ObjectOutputStream out = null;
 		try {
